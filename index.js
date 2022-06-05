@@ -7,8 +7,19 @@ const dates = [
   "2020-02-03 UTC+7", // 1580662800 (epoch time, dalam detik)
 ];
 
+
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (dates, index) => {
+  let result = [];
+  for (let index = 0; index < dates.length; index++){
+    result.push(Date.parse(dates[index]) / 1000);
+  }
+  if (index != null){
+    return result[index].toString();
+  } else {
+    return result.sort().join("-").toString();
+  }
+}
 
 // ! JANGAN DIMODIFIKASI
 (() => {
